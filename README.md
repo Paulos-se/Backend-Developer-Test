@@ -16,7 +16,7 @@ To query spots which have a domain with a count greater than 1 execute `3-more-t
 
 ## Step 3 - Creating Endpoint and Fetching data
 
-The `index.go` is your entry point. Download all go-gettable dependencies and then you should set up the connection to your database with the user name usually "postgress", password and database name.
+The `index.go` is your entry point. Download all go-gettable dependencies and then you should set up the connection to your database with the user name usually "postgress", password and database name (you can use .env file if you want).
 
 The Endpoint should receive 4 query parameters and find all the spots within a given radius from the table "MY_TABLE" using the requested parameters.
 
