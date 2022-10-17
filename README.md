@@ -1,6 +1,6 @@
 ## Background
 
-Built An API and wrote some sql queries for the purpose of locating spots within a certain area. The intention here is to mimic the building of a real world backend service with GO language, psql and PostGIS (a spatial database extender for PostgreSQL).
+I built An API and wrote some sql queries for the purpose of locating spots within a certain area. The intention here is to mimic the building of a real world backend service with GO language, psql and PostGIS (a spatial database extender for PostgreSQL).
 
 ## Step 1 - Creating tables and Seeding
 
