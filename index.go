@@ -16,9 +16,7 @@ const(
 	
 	DB_USER ="DATABASE_USER"
     DB_PASSWORD="YOUR_PASSWORD_HERE"
-    DB_NAME="DATABASE_NAME"
-
-    
+    DB_NAME="DATABASE_NAME"    
 )
 
 func setupDB() *sql.DB {
@@ -185,8 +183,7 @@ if err != nil {
 
         err=rows.Scan(&id, &spotName, &spotWebsite, &spotCoordinates, &spotDescription, &spotRating,&distance)
 	
-	
-        
+        checkErr(err)
 
         spots=append(spots,Spot{Id:id,SpotName:spotName, SpotWebsite: spotWebsite, SpotCoordinates:spotCoordinates ,SpotDescription: spotDescription, SpotRating: spotRating,Distance:distance})
 	}
