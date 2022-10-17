@@ -17,6 +17,8 @@ const(
 	DB_USER ="DATABASE_USER"
     DB_PASSWORD="YOUR_PASSWORD_HERE"
     DB_NAME="DATABASE_NAME"
+
+    
 )
 
 func setupDB() *sql.DB {

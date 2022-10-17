@@ -1,6 +1,0 @@
-You are now connected to database "spots" as user "paulosghirmai".
-             update_table             
---------------------------------------
- 047fd364-32e3-4bf6-8c52-362cbc441fe1
-(1 row)
-
