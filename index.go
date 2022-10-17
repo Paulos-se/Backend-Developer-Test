@@ -15,7 +15,7 @@ import (
 const(
 	
 	DB_USER ="postgres"
-    DB_PASSWORD="2405"
+    DB_PASSWORD=" "
     DB_NAME="spots"
 )
 

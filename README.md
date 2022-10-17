@@ -1,6 +1,6 @@
 ## Background
 
-Built An API and wrote some sql queries for the purpose of locating spots within a certain area. The intention here is to mimic the building of a real world backend service with GO language, psql and PostGIS is a spatial database extender for PostgreSQL.
+Built An API and wrote some sql queries for the purpose of locating spots within a certain area. The intention here is to mimic the building of a real world backend service with GO language, psql and PostGIS (a spatial database extender for PostgreSQL).
 
 ## Step 1 - Creating tables and Seeding
 
@@ -12,20 +12,22 @@ To update the database website coloumn with only the domain name please execute 
 
 To count how many spots contain the same domain please query `2-count-same-domain.sql`. The output is in count-same-domain.txt.
 
-To query spots which have a domain with a count greater than 1 execute `3-more-than-1.sql`. Just like the previous queries result, the output is in more-than-1-domain.txt.
+To query spots which have a domain with a count greater than 1 execute `3-more-than-1.sql`. Just like the previous queries, the output is in more-than-1-domain.txt.
 
-The `index.go` is your entry point. Download all go-gettable dependencies and then you should to set up the connection to your database with the user name usually "postgress", password and database name.
+## Step 3 - Creating Endpoint and Fetching data
 
-The Endpoint should receives 4 query parameters and finds all spots in the table (spots.sql) using the received parameters.
+The `index.go` is your entry point. Download all go-gettable dependencies and then you should set up the connection to your database with the user name usually "postgress", password and database name.
+
+The Endpoint should receive 4 query parameters and find all the spots within a given radius from the table "MY_TABLE" using the requested parameters.
 
 - `Latitude`
 - `Longitude`
 - `Radius (in meters)`
 - `Type (circle or square)`
 
-Results are ordered by distance and If distance between two spots is smaller than 50m, then order by rating. Endpoint returns an array of objects containing all fields in the data set.
+Results are ordered by distance and if distance between two spots is smaller than 50m, then they are ordered by rating. Then endpoint returns an array of objects including all fields in the data set.
 
-Example if you start the server on local port 3050 with `go run index.go` in the terminal and make request with these query params `/spots/?latitude=51.51207609999999&longitude=-0.143967&radius=100&type=circle` it returns all the spots within 100metres radius of the latitude and longitude point (type is circle):
+Example if you start the server on local port 3050 with `go run index.go` in the terminal and make a request with these query params `/spots/?latitude=51.51207609999999&longitude=-0.143967&radius=100&type=circle` it returns all the spots within 100metres radius of the latitude and longitude point requested (type is circle here):
 
 ```http
 {
